@@ -13,14 +13,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by Master on 3/9/2017 with project CRBSCSF15B 18 5 2k17.
- Contact # +923315665044
- */
-
 public class DatabaseHelperStudent extends SQLiteOpenHelper
 {
     private static final String DATABASE_NAME= "student.db";
@@ -47,7 +39,7 @@ public class DatabaseHelperStudent extends SQLiteOpenHelper
 
 
     //Constructor
-    public DatabaseHelperStudent(Context context)
+    DatabaseHelperStudent(Context context)
     {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -142,8 +134,7 @@ public class DatabaseHelperStudent extends SQLiteOpenHelper
         ContentValues contentValues=new ContentValues();
         contentValues.put(COLUMN_NAME_CONTACTS,name);
         contentValues.put(COLUMN_MOBILE_CONTACTS,mobile);
-        long result=db.insert(TABLE_CONTACTS,null,contentValues);
-        return result;
+        return db.insert(TABLE_CONTACTS,null,contentValues);
     }
 //    List<DataProfile> getProfile()
 //    {
